@@ -1,0 +1,32 @@
+# Robot Configuration Parameters
+# This file demonstrates how parameters can modify robot behavior
+
+robot_controller:
+  ros__parameters:
+    # Motion control parameters
+    max_linear_speed: 0.5        # Maximum forward/backward speed (m/s)
+    max_angular_speed: 1.0       # Maximum rotation speed (rad/s)
+    control_frequency: 10.0      # Control loop frequency (Hz)
+    
+    # Safety parameters
+    safety_distance: 0.5         # Minimum distance to obstacles (m)
+    emergency_stop_enabled: true # Enable emergency stop functionality
+    
+    # Behavior modifiers
+    robot_speed_multiplier: 1.0  # Speed multiplier (1.0 = normal, 2.0 = fast)
+    turn_sensitivity: 1.0        # Turning sensitivity factor
+
+gazebo_ros:
+  ros__parameters:
+    # Simulation parameters
+    physics_engine: "ode"         # Physics engine type
+    max_step_size: 0.01          # Maximum simulation step size
+    real_time_factor: 1.0        # Real-time simulation factor
+
+lidar_sensor:
+  ros__parameters:
+    # Sensor configuration
+    scan_frequency: 10.0         # Lidar scan frequency (Hz)
+    min_range: 0.1               # Minimum detection range (m)
+    max_range: 10.0              # Maximum detection range (m)
+    samples: 360                 # Number of scan points
